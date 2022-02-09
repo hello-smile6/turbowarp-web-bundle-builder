@@ -1,0 +1,31 @@
+name: Build wbn
+
+on: 
+  schedule:
+  - cron: "0 * * * *"
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+  # You may pin to the exact commit or the version.
+  # uses: tvdias/github-tagger@ed7350546e3e503b5e942dffd65bc8751a95e49d
+    - uses: tvdias/github-tagger@v0.0.2
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        # The GITHUB_TOKEN secret
+        # Tag text
+        # optional commit sha to apply the tag to
+    - uses: actions/checkout@v2
+    - uses: sudosubin/git-clone-action@v1.0.1
+      with:
+        repository: TurboWarp/scratch-gui
+        platform: github
+        path: turbowarp/
+    - uses: ncipollo/release-action@v1
+      with:
+        artifacts: "*.wbn"
+        bodyFile: "release.md"
+        token: ${{ secrets.GITHUB_TOKEN }}
