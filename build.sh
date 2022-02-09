@@ -1,4 +1,4 @@
-git clone https://github.com/turbowarp/scratch-gui.git
+git clone --depth 1 --single-branch https://github.com/turbowarp/scratch-gui.git
 cd scratch-gui/
 ls
 npm install
