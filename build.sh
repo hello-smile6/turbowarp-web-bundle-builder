@@ -5,6 +5,7 @@ npm install
 npm run build
 
 tar cvzf ../turbowarp.tar.gz build/
+sudo npm i -g wbn
 # wbn usage:
 # Usage: wbn [options]
 # 
