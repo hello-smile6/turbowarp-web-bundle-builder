@@ -21,3 +21,5 @@ sudo npm i -g wbn
 #   -h, --help                           output usage information
 
 wbn --dir build/ --baseURL "https://turbowarp.org/" --formatVersion b1 --primaryURL "https://turbowarp.org/" --manifestURL "https://turbowarp.org/manifest.webmanifest" --output ../turbowarp.wbn
+git clone --depth 1 --single-branch https://github.com/JaydenDev/osinfo.git
+wbn --dir public/ --baseURL "https://osinfo.vercel.app/" --formatVersion b1 --primaryURL "https://osinfo.vercel.app/" --output ../osinfo.wbn # What the hell, might as well add their repository
